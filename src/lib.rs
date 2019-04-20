@@ -13,8 +13,36 @@
 
 #![deny(missing_debug_implementations)]
 
+//! Creates a [`String`] with the given contents.
+//!
+//! `str!` allows you to conveniently create owned [`String`]s.
+//!
+//! - Create an empty [`String`]
+//! ```
+//! # #[macro_use] extern crate str_macro;
+//! let s = str!();
+//! assert_eq!(s, String::new());
+//! ```
+//!
+//! - Create an owned [`String`] from a constant [`str`] reference.
+//! ```
+//! # #[macro_use] extern crate str_macro;
+//! const CONST_STR: &str = "alpha beta gamma";
+//!
+//! let s = str!(CONST_STR);
+//! assert_eq!(&s, CONST_STR);
+//! ```
+//!
+//! [`String`]: https://doc.rust-lang.org/std/string/struct.String.html
+//! [`str`]: https://doc.rust-lang.org/std/primitive.str.html
+
 // Definition //
 
+/// Create an owned `String`.
+///
+/// See the [crate-level documentation] for usage examples.
+///
+/// [crate-level documentation]: index.html
 #[macro_export]
 macro_rules! str {
     () => ( String::new() );
