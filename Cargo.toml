@@ -4,7 +4,7 @@ description = "The str!() macro, similar to vec![] but for strings"
 repository = "https://github.com/ammongit/str-macro"
 readme = "README.md"
 license-file = "LICENSE.md"
-keywords = ["str", "string", "slice", "owned", "macro", "vec"]
+keywords = ["str", "string", "slice", "owned", "macro"]
 categories = []
 
 version = "0.1.1"
