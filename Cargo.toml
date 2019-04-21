@@ -1,6 +1,11 @@
 [package]
 name = "str-macro"
 description = "The str!() macro, similar to vec![] but for strings"
+repository = "https://github.com/ammongit/str-macro"
+categories = []
+license = "MIT"
+license-file = "LICENSE.md"
+
 version = "0.1.0"
 authors = ["Ammon Smith <ammon.i.smith@gmail.com>"]
 edition = "2018"
