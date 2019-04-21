@@ -7,7 +7,7 @@ license-file = "LICENSE.md"
 keywords = ["str", "string", "slice", "owned", "macro", "vec"]
 categories = []
 
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Ammon Smith <ammon.i.smith@gmail.com>"]
 edition = "2018"
 
