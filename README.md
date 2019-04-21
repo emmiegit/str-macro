@@ -27,7 +27,7 @@ assert_eq!(&s, "alpha beta gamma");
 let _: String = s;
 ```
 
-* Create an owned String from an object which implements `ToString`.
+* Create an owned `String` from an object which implements `ToString`.
 
 Note that this is automatically implemented for anything that implements `Display`.
 
