@@ -4,7 +4,7 @@ Rust crate for the `str!()` macro, which makes the conveniences available from `
 
 * Create an empty String
 
-```rs
+```rust
 // String
 let s = str!();
 assert_eq!(s, String::new());
@@ -16,7 +16,7 @@ assert_eq!(v.len(), 0);
 
 * Create an owned String from a constant str reference.
 
-```rs
+```rust
 // Vec equivalent
 let v = vec!["alpha", "beta", "gamma"];
 assert_eq!(v.len(), 3);
@@ -31,7 +31,7 @@ let _: String = s;
 
 Note that this is automatically implemented for anything that implements Display.
 
-```rs
+```rust
 let s = str!(2194);
 assert_eq!(&s, "2194");
 
