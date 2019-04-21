@@ -2,6 +2,8 @@
 
 Rust crate for the `str!()` macro, which makes the conveniences available from `vec![]` available for `String` as well.
 
+Has no dependencies, and should work on any Rust release channel.
+
 * Create an empty `String`
 
 ```rust
