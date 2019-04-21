@@ -15,26 +15,53 @@
 
 //! Creates a [`String`] with the given contents.
 //!
-//! `str!` allows you to conveniently create owned [`String`]s.
+//! `str!` allows you to conveniently create owned [`String`]s,
+//! similar to the [`vec!`] macro found in the Rust stdlib.
 //!
 //! - Create an empty [`String`]
 //! ```
 //! # #[macro_use] extern crate str_macro;
+//! // String
 //! let s = str!();
 //! assert_eq!(s, String::new());
+//!
+//! // Vec equivalent
+//! let v = vec![];
+//! assert_eq!(v.len(), 0);
+//! # let _: Vec<()> = v;
 //! ```
 //!
 //! - Create an owned [`String`] from a constant [`str`] reference.
 //! ```
 //! # #[macro_use] extern crate str_macro;
-//! const CONST_STR: &str = "alpha beta gamma";
+//! // Vec equivalent
+//! let v = vec!["alpha", "beta", "gamma"];
+//! assert_eq!(v.len(), 3);
 //!
-//! let s = str!(CONST_STR);
-//! assert_eq!(&s, CONST_STR);
+//! // String
+//! let s = str!("alpha beta gamma");
+//! assert_eq!(&s, "alpha beta gamma");
+//! let _: String = s;
 //! ```
 //!
+//! - Create an owned [`String`] from an object which implements [`ToString`].
+//!
+//! Note that this is automatically implemented for anything that implements [`Display`].
+//! ```
+//! # #[macro_use] extern crate str_macro;
+//! # use std::net::Ipv4Addr;
+//! let s = str!(2194);
+//! assert_eq!(&s, "2194");
+//!
+//! let s = str!(Ipv4Addr::new(127, 0, 0, 1));
+//! assert_eq!(&s, "127.0.0.1");
+//! ```
+//!
+//! [`Display`]: https://doc.rust-lang.org/std/fmt/trait.Display.html
 //! [`String`]: https://doc.rust-lang.org/std/string/struct.String.html
+//! [`ToString`]: https://doc.rust-lang.org/std/string/trait.ToString.html
 //! [`str`]: https://doc.rust-lang.org/std/primitive.str.html
+//! [`vec!`]: https://doc.rust-lang.org/std/macro.vec.html
 
 // Definition //
 
