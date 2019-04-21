@@ -39,6 +39,8 @@ let s = str!(Ipv4Addr::new(127, 0, 0, 1));
 assert_eq!(&s, "127.0.0.1");
 ```
 
+#### Copyright
+
 Copyright (C) 2019 Ammon Smith
 
 Available under the MIT License.
