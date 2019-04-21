@@ -2,7 +2,7 @@
 
 Rust crate for the `str!()` macro, which makes the conveniences available from `vec![]` available for `String` as well.
 
-* Create an empty String
+* Create an empty `String`
 
 ```rust
 // String
@@ -14,7 +14,7 @@ let v = vec![];
 assert_eq!(v.len(), 0);
 ```
 
-* Create an owned String from a constant str reference.
+* Create an owned `String` from a constant str reference.
 
 ```rust
 // Vec equivalent
@@ -27,9 +27,9 @@ assert_eq!(&s, "alpha beta gamma");
 let _: String = s;
 ```
 
-* Create an owned String from an object which implements ToString.
+* Create an owned String from an object which implements `ToString`.
 
-Note that this is automatically implemented for anything that implements Display.
+Note that this is automatically implemented for anything that implements `Display`.
 
 ```rust
 let s = str!(2194);
