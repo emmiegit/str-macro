@@ -11,7 +11,7 @@
  *
  */
 
-#![deny(missing_debug_implementations)]
+#![deny(missing_debug_implementations, missing_docs)]
 
 //! Creates a [`String`] with the given contents.
 //!
