@@ -1,0 +1,58 @@
+language: rust
+rust:
+  - stable
+  - beta
+  - nightly
+
+os:
+  - linux
+  - osx
+  - windows
+
+matrix:
+  allow_failures:
+    - rust: nightly
+    - os: windows
+  fast_finish: true
+
+cache: cargo
+
+before_script:
+  - rustup component add rustfmt
+
+stages:
+  - format
+  - clippy
+  - test
+  - doc
+
+jobs:
+  include:
+    - stage: format
+      script:
+        - rustfmt --edition=2018 src/lib.rs --check
+    - stage: clippy
+      script:
+        - rustup toolchain install nightly-2020-01-02-x86_64-unknown-linux-gnu
+        - rustup component add clippy --toolchain nightly-2020-01-02-x86_64-unknown-linux-gnu
+        - cargo +nightly-2020-01-02 clippy
+    - stage: test
+      rust:
+        - stable
+        - beta
+        - nightly
+      os:
+        - linux
+        - osx
+        - windows
+      script:
+        - cargo build --verbose --release
+        - cargo test --verbose --release -- --nocapture
+    - stage: doc
+      script:
+        - cargo doc --verbose --release
+
+notifications:
+  email:
+    on_success: change
+    on_failure: always
