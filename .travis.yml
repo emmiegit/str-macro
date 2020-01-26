@@ -18,39 +18,22 @@ matrix:
 cache: cargo
 
 before_script:
+  # Install rustfmt
   - rustup component add rustfmt
+  # Install clippy
+  - rustup toolchain install nightly-2020-01-02-x86_64-unknown-linux-gnu
+  - rustup component add clippy --toolchain nightly-2020-01-02-x86_64-unknown-linux-gnu
 
-stages:
-  - format
-  - clippy
-  - test
-  - doc
-
-jobs:
-  include:
-    - stage: format
-      script:
-        - rustfmt --edition=2018 src/lib.rs --check
-    - stage: clippy
-      script:
-        - rustup toolchain install nightly-2020-01-02-x86_64-unknown-linux-gnu
-        - rustup component add clippy --toolchain nightly-2020-01-02-x86_64-unknown-linux-gnu
-        - cargo +nightly-2020-01-02 clippy
-    - stage: test
-      rust:
-        - stable
-        - beta
-        - nightly
-      os:
-        - linux
-        - osx
-        - windows
-      script:
-        - cargo build --verbose --release
-        - cargo test --verbose --release -- --nocapture
-    - stage: doc
-      script:
-        - cargo doc --verbose --release
+script:
+  # Check formatting
+  - rustfmt --edition=2018 src/lib.rs --check
+  # Check clippy lints
+  - cargo +nightly-2020-01-02 clippy
+  # Run build and tests
+  - cargo build --verbose --release
+  - cargo test --verbose --release -- --nocapture
+  # Generate documentation
+  - cargo doc --verbose --release
 
 notifications:
   email:
