@@ -72,8 +72,12 @@
 /// [crate-level documentation]: index.html
 #[macro_export]
 macro_rules! str {
-    () => ( String::new() );
-    ($x:expr) => ( ToString::to_string(&$x) );
+    () => {
+        String::new()
+    };
+    ($x:expr) => {
+        ToString::to_string(&$x)
+    };
 }
 
 // Tests //
