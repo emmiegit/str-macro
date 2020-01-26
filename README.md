@@ -45,6 +45,6 @@ assert_eq!(&s, "127.0.0.1");
 
 ----
 
-Copyright (C) 2019 Ammon Smith
+Copyright (C) 2019-2020 Ammon Smith
 
 Available under the MIT License.
