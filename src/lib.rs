@@ -12,6 +12,7 @@
  */
 
 #![deny(missing_debug_implementations, missing_docs)]
+#![forbid(unsafe_code)]
 
 //! Creates a [`String`] with the given contents.
 //!
