@@ -7,7 +7,7 @@ license = "MIT"
 keywords = ["str", "string", "slice", "owned", "macro"]
 categories = ["rust-patterns"]
 
-version = "0.1.4"
+version = "0.1.5"
 authors = ["Ammon Smith <ammon.i.smith@gmail.com>"]
 edition = "2018"
 
