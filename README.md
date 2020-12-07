@@ -1,6 +1,11 @@
 ## str-macro
 
-[![Build Status](https://travis-ci.org/ammongit/str-macro.svg?branch=master)](https://travis-ci.org/ammongit/str-macro)
+<p>
+  <a href="https://github.com/ammongit/str-macro/actions?query=workflow%3A%22Rust+CI%22">
+    <img src="https://github.com/ammongit/str-macro/workflows/Rust%20CI/badge.svg"
+         alt="Rust CI badge">
+  </a>
+</p>
 
 Rust crate for the `str!()` macro, which makes the conveniences available from `vec![]` available for `String` as well.
 

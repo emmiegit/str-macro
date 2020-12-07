@@ -1,0 +1,50 @@
+on:
+  push:
+    paths:
+      - 'Cargo.toml'
+      - 'Cargo.lock'
+      - 'src/**'
+      - '.github/workflows/*'
+
+name: Rust CI
+
+jobs:
+  build_and_test:
+    name: Compile
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - uses: actions-rs/cargo@v1
+        with:
+          command: build
+          args: --all-features --release
+      - uses: actions-rs/cargo@v1
+        with:
+          command: doc
+          args: --all-features --release --no-deps
+      - uses: actions-rs/cargo@v1
+        with:
+          command: test
+          args: --all-features -- --nocapture --test-threads 1
+  clippy_lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: nightly
+          override: true
+          components: rustfmt, clippy
+      - uses: actions-rs/cargo@v1
+        with:
+          command: fmt
+          args: --all -- --check
+      - uses: actions-rs/cargo@v1
+        with:
+          command: clippy
+          args: -- -D warnings
