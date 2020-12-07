@@ -14,13 +14,13 @@ Has no dependencies, and should work on any Rust release channel.
 * Create an empty `String`
 
 ```rust
-// String
-let s = str!();
-assert_eq!(s, String::new());
-
 // Vec equivalent
 let v = vec![];
 assert_eq!(v.len(), 0);
+
+// String
+let s = str!();
+assert_eq!(s, String::new());
 ```
 
 * Create an owned `String` from a constant str reference.

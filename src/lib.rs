@@ -22,14 +22,14 @@
 //! - Create an empty [`String`]
 //! ```
 //! # #[macro_use] extern crate str_macro;
-//! // String
-//! let s = str!();
-//! assert_eq!(s, String::new());
-//!
 //! // Vec equivalent
 //! let v = vec![];
 //! assert_eq!(v.len(), 0);
+//!
 //! # let _: Vec<()> = v;
+//! // String
+//! let s = str!();
+//! assert_eq!(s, String::new());
 //! ```
 //!
 //! - Create an owned [`String`] from a constant [`str`] reference.
