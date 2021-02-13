@@ -79,7 +79,7 @@ macro_rules! str {
     () => {
         String::new()
     };
-    ($x:expr) => {
+    ($x:expr $(,)?) => {
         ToString::to_string(&$x)
     };
 }
