@@ -16,11 +16,13 @@ Has no dependencies, and should work on any Rust release channel.
 ```rust
 // Vec equivalent
 let v = vec![];
-assert_eq!(v.len(), 0);
+assert_eq!(v, Vec::new());
+assert!(v.is_empty());
 
 // String
 let s = str!();
 assert_eq!(s, String::new());
+assert!(s.is_empty());
 ```
 
 * Create an owned `String` from a constant str reference.
@@ -28,6 +30,7 @@ assert_eq!(s, String::new());
 ```rust
 // Vec equivalent
 let v = vec!["alpha", "beta", "gamma"];
+assert_eq!(&v, &["alpha", "beta", "gamma"];
 assert_eq!(v.len(), 3);
 
 // String

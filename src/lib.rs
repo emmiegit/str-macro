@@ -24,12 +24,14 @@
 //! # #[macro_use] extern crate str_macro;
 //! // Vec equivalent
 //! let v = vec![];
-//! assert_eq!(v.len(), 0);
+//! assert_eq!(v, Vec::new());
+//! assert!(v.is_empty());
 //!
 //! # let _: Vec<()> = v;
 //! // String
 //! let s = str!();
 //! assert_eq!(s, String::new());
+//! assert!(s.is_empty());
 //! ```
 //!
 //! - Create an owned [`String`] from a constant [`str`] reference.
@@ -37,6 +39,7 @@
 //! # #[macro_use] extern crate str_macro;
 //! // Vec equivalent
 //! let v = vec!["alpha", "beta", "gamma"];
+//! assert_eq!(&v, &["alpha", "beta", "gamma"]);
 //! assert_eq!(v.len(), 3);
 //!
 //! // String
