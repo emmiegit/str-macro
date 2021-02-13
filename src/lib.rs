@@ -2,7 +2,7 @@
  * lib.rs
  *
  * str-macro - A convenience macro for strings in Rust.
- * Copyright (c) 2019-2020 Ammon Smith
+ * Copyright (c) 2019-2021 Ammon Smith
  *
  * str-macro is available free of charge under the terms of the MIT
  * License. You are free to redistribute and/or modify it under those
