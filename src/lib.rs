@@ -100,6 +100,18 @@ mod test {
         assert_eq!(s, "second message");
     }
 
+    #[test]
+    fn test_comma() {
+        let s: String = str!();
+        assert_eq!(s, "");
+
+        let s: String = str!("test message",);
+        assert_eq!(s, "test message");
+
+        let s: String = str!(String::from("second message"),);
+        assert_eq!(s, "second message");
+    }
+
     #[derive(Debug)]
     struct S;
 
