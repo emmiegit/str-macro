@@ -1,7 +1,7 @@
 [package]
 name = "str-macro"
 description = "The str!() macro, similar to vec![] but for strings"
-repository = "https://github.com/ammongit/str-macro"
+repository = "https://github.com/emmiegit/str-macro"
 readme = "README.md"
 license = "MIT"
 keywords = ["str", "string", "slice", "owned", "macro"]

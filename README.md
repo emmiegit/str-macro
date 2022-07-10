@@ -1,8 +1,8 @@
 ## str-macro
 
 <p>
-  <a href="https://github.com/ammongit/str-macro/actions?query=workflow%3A%22Rust+CI%22">
-    <img src="https://github.com/ammongit/str-macro/workflows/Rust%20CI/badge.svg"
+  <a href="https://github.com/emmiegit/str-macro/actions?query=workflow%3A%22Rust+CI%22">
+    <img src="https://github.com/emmiegit/str-macro/workflows/Rust%20CI/badge.svg"
          alt="Rust CI badge">
   </a>
 </p>
